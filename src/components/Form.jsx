@@ -25,8 +25,9 @@ function Form() {
     }
   }
   const copyToClipBoard = useCallback(() => {
-    window.navigator.clipboard.writeText(passwordRef.current.value);
-  }, [passwordRef]);
+    passwordRef.current?.select();
+    window.navigator.clipboard.writeText(passwordinput);
+  }, [input]);
   const passwordGenerater = useCallback(() => {
     let pass = "";
     let str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
